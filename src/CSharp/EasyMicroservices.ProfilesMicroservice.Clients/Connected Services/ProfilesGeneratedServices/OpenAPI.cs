@@ -828,6 +828,10 @@ namespace Profiles.GeneratedServices
 
         WebServiceNotWorking = 14,
 
+        Incorrect = 15,
+
+        OperationFailed = 16,
+
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
