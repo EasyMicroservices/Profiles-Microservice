@@ -1,0 +1,502 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "EasyMicroservices.ProfilesMicroservice.WebApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Profile/GetById": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Profile/GetByUniqueIdentity": {
+      "post": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "GetByUniqueIdentity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Profile/Add": {
+      "post": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "Add",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Profile/Update": {
+      "post": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "Update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Profile/HardDeleteById": {
+      "delete": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "HardDeleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Profile/GetAll": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "GetAll",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Profile/GetAllByUniqueIdentity": {
+      "post": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "GetAllByUniqueIdentity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "validations": {
+            "title": "List<ValidationContract>",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ValidationContract"
+            }
+          },
+          "failedReasonType": {
+            "$ref": "#/components/schemas/FailedReasonType"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "details": {
+            "type": "string",
+            "nullable": true
+          },
+          "stackTrace": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FailedReasonType": {
+        "type": "integer",
+        "format": "int32",
+        "x-enumNames": [
+          "None",
+          "Default",
+          "All",
+          "Other",
+          "Unknown",
+          "Nothing",
+          "SessionAccessDenied",
+          "AccessDenied",
+          "InternalError",
+          "Dupplicate",
+          "Empty",
+          "NotFound",
+          "ValidationsError",
+          "StreamError",
+          "WebServiceNotWorking"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "GetUniqueIdentityRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "uniqueIdentity": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Int64MessageContract": {
+        "title": "MessageContract<Int64>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "result": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "MessageContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          }
+        }
+      },
+      "ProfileContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "creationDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiationDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "uniqueIdentity": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ProfileContractListMessageContract": {
+        "title": "MessageContract<List`1>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "result": {
+            "title": "List<ProfileContract>",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ProfileContract"
+            }
+          }
+        }
+      },
+      "ProfileContractMessageContract": {
+        "title": "MessageContract<ProfileContract>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "result": {
+            "$ref": "#/components/schemas/ProfileContract"
+          }
+        }
+      },
+      "ValidationContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    }
+  }
+}
