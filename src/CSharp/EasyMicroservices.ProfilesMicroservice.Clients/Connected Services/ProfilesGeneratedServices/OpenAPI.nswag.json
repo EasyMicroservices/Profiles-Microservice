@@ -361,7 +361,9 @@
           "NotFound",
           "ValidationsError",
           "StreamError",
-          "WebServiceNotWorking"
+          "WebServiceNotWorking",
+          "Incorrect",
+          "OperationFailed"
         ],
         "enum": [
           0,
@@ -378,7 +380,9 @@
           11,
           12,
           13,
-          14
+          14,
+          15,
+          16
         ]
       },
       "GetUniqueIdentityRequest": {
