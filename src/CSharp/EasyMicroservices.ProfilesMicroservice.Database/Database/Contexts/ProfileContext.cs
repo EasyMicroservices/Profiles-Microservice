@@ -1,9 +1,10 @@
 ﻿using EasyMicroservices.ProfilesMicroservice.Database.Entities;
 using Microsoft.EntityFrameworkCore;
+using EasyMicroservices.Cores.Relational.EntityFrameworkCore;
 
 namespace EasyMicroservices.ProfilesMicroservice.Database.Contexts
 {
-    public class ProfileContext : DbContext
+    public class ProfileContext : RelationalCoreContext
     {
         IDatabaseBuilder _builder;
         public ProfileContext(IDatabaseBuilder builder)
