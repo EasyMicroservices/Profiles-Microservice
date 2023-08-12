@@ -10,10 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using EasyMicroservices.ProfilesMicroservice.Database.Entities;
 using EasyMicroservices.ProfilesMicroservice.Contracts;
 using EasyMicroservices.ProfilesMicroservice.Interfaces;
-using EasyMicroservices.ProfilesMicroservice.Database;
-using EasyMicroservices.ProfilesMicroservice.Interfaces;
 using EasyMicroservices.ProfilesMicroservice;
 using EasyMicroservices.ProfilesMicroservice.Contracts.Common;
+using EasyMicroservices.ProfilesMicroservice.Contracts.Responses;
 
 namespace EasyMicroservices.ProfilesMicroservice.WebApi
 {
@@ -47,7 +46,7 @@ namespace EasyMicroservices.ProfilesMicroservice.WebApi
             string webRootPath = @Directory.GetCurrentDirectory();
 
             builder.Services.AddHttpContextAccessor();
-            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ProfileEntity, ProfileContract, ProfileContract, ProfileContract>());
+            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ProfileEntity, ProfileContract, ProfileContract, ProfileResponseContract>());
             builder.Services.AddScoped<IDatabaseBuilder>(serviceProvider => new DatabaseBuilder());
    
             builder.Services.AddScoped<IDependencyManager>(service => new DependencyManager());

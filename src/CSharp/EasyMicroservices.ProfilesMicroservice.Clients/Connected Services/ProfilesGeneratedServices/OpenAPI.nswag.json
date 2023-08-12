@@ -6,38 +6,47 @@
   },
   "paths": {
     "/api/Profile/GetById": {
-      "get": {
+      "post": {
         "tags": [
           "Profile"
         ],
         "operationId": "GetById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int64"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractMessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractMessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractMessageContract"
                 }
               }
             }
@@ -55,17 +64,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
               }
             }
           }
@@ -76,17 +85,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractMessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractMessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractMessageContract"
                 }
               }
             }
@@ -144,7 +153,7 @@
       }
     },
     "/api/Profile/Update": {
-      "post": {
+      "put": {
         "tags": [
           "Profile"
         ],
@@ -174,17 +183,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractMessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractMessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractMessageContract"
                 }
               }
             }
@@ -198,16 +207,74 @@
           "Profile"
         ],
         "operationId": "HardDeleteById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int64"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
             }
           }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Profile/SoftDeleteById": {
+      "delete": {
+        "tags": [
+          "Profile"
         ],
+        "operationId": "SoftDeleteById",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -244,17 +311,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractListMessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractListMessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractListMessageContract"
                 }
               }
             }
@@ -272,17 +339,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequest"
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
               }
             }
           }
@@ -293,17 +360,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractListMessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractListMessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProfileContractListMessageContract"
+                  "$ref": "#/components/schemas/ProfileResponseContractListMessageContract"
                 }
               }
             }
@@ -330,6 +397,10 @@
             "$ref": "#/components/schemas/FailedReasonType"
           },
           "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "endUserMessage": {
             "type": "string",
             "nullable": true
           },
@@ -385,13 +456,35 @@
           16
         ]
       },
-      "GetUniqueIdentityRequest": {
+      "GetUniqueIdentityRequestContract": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
           "uniqueIdentity": {
             "type": "string",
             "nullable": true
+          }
+        }
+      },
+      "Int64DeleteRequestContract": {
+        "title": "DeleteRequestContract<Int64>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "Int64GetIdRequestContract": {
+        "title": "GetIdRequestContract<Int64>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
           }
         }
       },
@@ -409,6 +502,20 @@
           "result": {
             "type": "integer",
             "format": "int64"
+          }
+        }
+      },
+      "Int64SoftDeleteRequestContract": {
+        "title": "SoftDeleteRequestContract<Int64>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isDelete": {
+            "type": "boolean"
           }
         }
       },
@@ -440,21 +547,54 @@
             "type": "string",
             "nullable": true
           },
-          "creationDateTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiationDateTime": {
-            "type": "string",
-            "format": "date-time"
-          },
           "uniqueIdentity": {
             "type": "string",
             "nullable": true
           }
         }
       },
-      "ProfileContractListMessageContract": {
+      "ProfileResponseContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "uniqueIdentity": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "creationDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deletedDateTime": {
+            "title": "Nullable<DateTime>",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modificationDateTime": {
+            "title": "Nullable<DateTime>",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "ProfileResponseContractListMessageContract": {
         "title": "MessageContract<List`1>",
         "type": "object",
         "additionalProperties": false,
@@ -466,17 +606,17 @@
             "$ref": "#/components/schemas/ErrorContract"
           },
           "result": {
-            "title": "List<ProfileContract>",
+            "title": "List<ProfileResponseContract>",
             "type": "array",
             "nullable": true,
             "items": {
-              "$ref": "#/components/schemas/ProfileContract"
+              "$ref": "#/components/schemas/ProfileResponseContract"
             }
           }
         }
       },
-      "ProfileContractMessageContract": {
-        "title": "MessageContract<ProfileContract>",
+      "ProfileResponseContractMessageContract": {
+        "title": "MessageContract<ProfileResponseContract>",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -487,7 +627,7 @@
             "$ref": "#/components/schemas/ErrorContract"
           },
           "result": {
-            "$ref": "#/components/schemas/ProfileContract"
+            "$ref": "#/components/schemas/ProfileResponseContract"
           }
         }
       },
