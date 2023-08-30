@@ -13,6 +13,7 @@ using EasyMicroservices.ProfilesMicroservice.Interfaces;
 using EasyMicroservices.ProfilesMicroservice;
 using EasyMicroservices.ProfilesMicroservice.Contracts.Common;
 using EasyMicroservices.ProfilesMicroservice.Contracts.Responses;
+using EasyMicroservices.ProfilesMicroservice.Contracts.Requests;
 
 namespace EasyMicroservices.ProfilesMicroservice.WebApi
 {
@@ -46,12 +47,14 @@ namespace EasyMicroservices.ProfilesMicroservice.WebApi
             string webRootPath = @Directory.GetCurrentDirectory();
 
             builder.Services.AddHttpContextAccessor();
-            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ProfileEntity, ProfileContract, ProfileContract, ProfileResponseContract>());
+            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ProfileEntity, AddProfileRequestContract, ProfileContract, ProfileResponseContract>());
             builder.Services.AddScoped<IDatabaseBuilder>(serviceProvider => new DatabaseBuilder());
    
             builder.Services.AddScoped<IDependencyManager>(service => new DependencyManager());
             builder.Services.AddScoped(service => new WhiteLabelManager(service, service.GetService<IDependencyManager>()));
             builder.Services.AddTransient(serviceProvider => new ProfileContext(serviceProvider.GetService<IDatabaseBuilder>()));
+            builder.Services.AddTransient<IConfiguration>(serviceProvider => config);
+
             //builder.Services.AddScoped<IFileManagerProvider>(serviceProvider => new FileManagerProvider());
             //builder.Services.AddScoped<IDirectoryManagerProvider, kc>();
 
@@ -74,7 +77,7 @@ namespace EasyMicroservices.ProfilesMicroservice.WebApi
             using (var scope = app.Services.CreateScope())
             {
                 using var context = scope.ServiceProvider.GetService<ProfileContext>();
-                await context.Database.EnsureCreatedAsync();
+                //await context.Database.EnsureCreatedAsync();
                 //await context.Database.MigrateAsync();
                 await context.DisposeAsync();
                 var service = scope.ServiceProvider.GetService<WhiteLabelManager>();

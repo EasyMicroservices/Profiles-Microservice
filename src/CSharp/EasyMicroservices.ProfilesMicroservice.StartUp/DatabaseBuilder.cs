@@ -17,7 +17,7 @@ namespace EasyMicroservices.ProfilesMicroservice
 
         public void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase("ProfileDatabase"); 
+            optionsBuilder.UseInMemoryDatabase("ProfileDatabase");
             //optionsBuilder.UseSqlServer(config.GetConnectionString("local"));
         }
     }
