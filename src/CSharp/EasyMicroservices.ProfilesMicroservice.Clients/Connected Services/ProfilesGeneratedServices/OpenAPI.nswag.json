@@ -433,14 +433,7 @@
       "AddProfileRequestContract": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "file"
-        ],
         "properties": {
-          "file": {
-            "type": "string",
-            "format": "binary"
-          },
           "firstName": {
             "type": "string",
             "nullable": true
@@ -815,14 +808,7 @@
       "UpdateProfileRequestContract": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "file"
-        ],
         "properties": {
-          "file": {
-            "type": "string",
-            "format": "binary"
-          },
           "firstName": {
             "type": "string",
             "nullable": true

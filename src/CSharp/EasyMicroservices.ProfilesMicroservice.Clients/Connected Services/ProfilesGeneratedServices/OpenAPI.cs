@@ -857,26 +857,9 @@ namespace Profiles.GeneratedServices
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class AddProfileRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
-        private byte[] _file;
         private string _firstName;
         private string _lastName;
         private string _uniqueIdentity;
-
-        [Newtonsoft.Json.JsonProperty("file", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public byte[] File
-        {
-            get { return _file; }
-
-            set
-            {
-                if (_file != value)
-                {
-                    _file = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
 
         [Newtonsoft.Json.JsonProperty("firstName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FirstName
@@ -2006,27 +1989,10 @@ namespace Profiles.GeneratedServices
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class UpdateProfileRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
-        private byte[] _file;
         private string _firstName;
         private string _lastName;
         private string _uniqueIdentity;
         private long _id;
-
-        [Newtonsoft.Json.JsonProperty("file", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public byte[] File
-        {
-            get { return _file; }
-
-            set
-            {
-                if (_file != value)
-                {
-                    _file = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
 
         [Newtonsoft.Json.JsonProperty("firstName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string FirstName
