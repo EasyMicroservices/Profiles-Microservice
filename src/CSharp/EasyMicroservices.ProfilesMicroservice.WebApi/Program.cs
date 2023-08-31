@@ -47,7 +47,7 @@ namespace EasyMicroservices.ProfilesMicroservice.WebApi
             string webRootPath = @Directory.GetCurrentDirectory();
 
             builder.Services.AddHttpContextAccessor();
-            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ProfileEntity, AddProfileRequestContract, UpdateProfileRequestContract, ProfileResponseContract>());
+            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ProfileEntity, ProfileContract, ProfileContract, ProfileResponseContract>());
             builder.Services.AddScoped<IDatabaseBuilder>(serviceProvider => new DatabaseBuilder());
    
             builder.Services.AddScoped<IDependencyManager>(service => new DependencyManager());

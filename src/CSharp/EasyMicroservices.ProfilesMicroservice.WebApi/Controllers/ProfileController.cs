@@ -8,9 +8,9 @@ using EasyMicroservices.ServiceContracts;
 
 namespace EasyMicroservices.ProfilesMicroservice.WebApi.Controllers
 {
-    public class ProfileController : SimpleQueryServiceController<ProfileEntity, AddProfileRequestContract, UpdateProfileRequestContract, ProfileResponseContract, long>
+    public class ProfileController : SimpleQueryServiceController<ProfileEntity, ProfileContract, ProfileContract, ProfileResponseContract, long>
     {
-        public ProfileController(IContractLogic<ProfileEntity, AddProfileRequestContract, UpdateProfileRequestContract, ProfileResponseContract, long> contractReadable) : base(contractReadable)
+        public ProfileController(IContractLogic<ProfileEntity, ProfileContract, ProfileContract, ProfileResponseContract, long> contractReadable) : base(contractReadable)
         {
         }
 
