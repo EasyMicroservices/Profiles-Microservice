@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="EasyMicroservices.Cores.Database" Version="0.0.0.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.2.0" />
   </ItemGroup>
 
 </Project>
