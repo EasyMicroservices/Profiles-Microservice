@@ -48,7 +48,7 @@ namespace EasyMicroservices.ProfilesMicroservice.WebApi
 
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ProfileEntity, ProfileContract, ProfileContract, ProfileResponseContract>());
-            builder.Services.AddScoped<IDatabaseBuilder>(serviceProvider => new DatabaseBuilder());
+            builder.Services.AddScoped<IDatabaseBuilder>(serviceProvider => new DatabaseBuilder(config));
    
             builder.Services.AddScoped<IDependencyManager>(service => new DependencyManager());
             builder.Services.AddScoped(service => new WhiteLabelManager(service, service.GetService<IDependencyManager>()));
@@ -91,7 +91,10 @@ namespace EasyMicroservices.ProfilesMicroservice.WebApi
         
         static void CreateDatabase()
         {
-            using (var context = new ProfileContext(new DatabaseBuilder()))
+            IConfiguration config = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .Build();
+            using (var context = new ProfileContext(new DatabaseBuilder(config)))
             {
                 if (context.Database.EnsureCreated())
                 {
