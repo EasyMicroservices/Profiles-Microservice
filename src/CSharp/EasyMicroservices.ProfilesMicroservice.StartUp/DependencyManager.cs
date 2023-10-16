@@ -14,6 +14,7 @@ using EasyMicroservices.ProfilesMicroservice.Database.Contexts;
 using EasyMicroservices.ProfilesMicroservice.Interfaces;
 using System;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace EasyMicroservices.ProfilesMicroservice
 {
@@ -33,7 +34,10 @@ namespace EasyMicroservices.ProfilesMicroservice
 
         public virtual IDatabase GetDatabase()
         {
-            return new EntityFrameworkCoreDatabaseProvider(new ProfileContext(new DatabaseBuilder()));
+            IConfiguration config = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .Build();
+            return new EntityFrameworkCoreDatabaseProvider(new ProfileContext(new DatabaseBuilder(config)));
         }
 
         public static string DefaultUniqueIdentity { get; set; }
