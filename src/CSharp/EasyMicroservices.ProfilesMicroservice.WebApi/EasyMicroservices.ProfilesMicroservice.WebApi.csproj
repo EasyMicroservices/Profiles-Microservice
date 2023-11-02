@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EasyMicroservices.Cores.AspCoreApi" Version="0.0.0.22" />
-    <PackageReference Include="EasyMicroservices.ServiceContracts" Version="0.0.0.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.10">
+    <PackageReference Include="EasyMicroservices.Cores.AspCoreApi" Version="0.0.0.44" />
+    <PackageReference Include="EasyMicroservices.ServiceContracts" Version="0.0.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.13">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EasyMicroservices.ProfilesMicroservice.Database\EasyMicroservices.ProfilesMicroservice.Database.csproj" />
     <ProjectReference Include="..\EasyMicroservices.ProfilesMicroservice.StartUp\EasyMicroservices.ProfilesMicroservice.StartUp.csproj" />
   </ItemGroup>
 

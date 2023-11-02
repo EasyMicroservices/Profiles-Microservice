@@ -18,7 +18,6 @@ namespace EasyMicroservices.ProfilesMicroservice.Tests
             //types to check (this will check all of types in assembly so no need to add all of types of assembly)
             AssemblyManager.AddAssemblyToReview(
                 typeof(ApplicationManager),
-                typeof(StartUp),
                 typeof(ProfileEntity),
                 typeof(ProfileContract),
                 typeof(ProfileController));

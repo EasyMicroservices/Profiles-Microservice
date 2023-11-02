@@ -1,13 +1,14 @@
 ﻿using EasyMicroservices.ProfilesMicroservice.Database.Entities;
 using Microsoft.EntityFrameworkCore;
 using EasyMicroservices.Cores.Relational.EntityFrameworkCore;
+using EasyMicroservices.Cores.Relational.EntityFrameworkCore.Intrerfaces;
 
 namespace EasyMicroservices.ProfilesMicroservice.Database.Contexts
 {
     public class ProfileContext : RelationalCoreContext
     {
-        IDatabaseBuilder _builder;
-        public ProfileContext(IDatabaseBuilder builder)
+        IEntityFrameworkCoreDatabaseBuilder _builder;
+        public ProfileContext(IEntityFrameworkCoreDatabaseBuilder builder)
         {
             _builder = builder;
         }
