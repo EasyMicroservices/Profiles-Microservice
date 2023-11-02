@@ -3,7 +3,7 @@ using EasyMicroservices.Cores.AspEntityFrameworkCoreApi;
 using EasyMicroservices.Cores.Relational.EntityFrameworkCore.Intrerfaces;
 using EasyMicroservices.ProfilesMicroservice;
 
-namespace EasyMicroservices.ContentsMicroservice.WebApi
+namespace EasyMicroservices.ProfilesMicroservice.WebApi
 {
     public class Program
     {
