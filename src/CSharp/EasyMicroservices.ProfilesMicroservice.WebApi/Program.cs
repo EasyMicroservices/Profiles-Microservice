@@ -10,7 +10,7 @@ namespace EasyMicroservices.ProfilesMicroservice.WebApi
         public static async Task Main(string[] args)
         {
             var app = CreateBuilder(args);
-            var build = await app.Build<ProfileContext>();
+            var build = await app.Build<ProfileContext>(true);
             build.MapControllers();
             build.Run();
         }
